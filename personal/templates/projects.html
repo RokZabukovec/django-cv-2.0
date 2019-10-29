@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'navbar.html' %}
+    <h3 class="center-title bold big dark-blue">Projects</h3>
+    <div class="container horizontal-scroll flex light-bg" id="horizontal">
+        {% for project in projects %}
+            <div class="card featured-card all-projects-card">
+                  {% if project.cover.url is not None %}
+                    <img src="{{ project.cover.url }}" class="card-img-top">
+                      {% else %}
+                      <h3>No picture</h3>
+                  {% endif %}
+                    <div class="card-body featured-card-body">
+                      <h5 class="card-title  bold dark-blue">{{ project.title }}</h5>
+                      <p class="focus-color bold">{{ project.tehnologies }}</p>
+                      <p class="dark-blue">{{ project.overview }}</p>
+                        <a href="/project/{{ project.id }}" class="readmore-btn">Read more</a>
+                    </div>
+                  </div>
+        {% endfor %}
+    </div>
+{% endblock %}

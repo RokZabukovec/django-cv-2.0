@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "navbar.html" %}
+		<div class="jumbotron jumbotron-fluid ">
+		  <div class="container">
+		    <h1 class="display-4 bold dark-blue">{{ project.title }}</h1>
+		    <p class="lead dark-blue">{{ project.overview }} <span class="lead focus-color bold"><a href="{{ project.link }}">Source code</a></span></p>
+			  <h3 class="bold dark-blue">Technologies I used:</h3>
+		    <p class="lead focus-color">{{ project.tehnologies }}</p>
+
+		  </div>
+		</div>
+		<div class="container">
+		{% for photo in photos %}
+		      <img class="img-fluid img-thumbnail mb-5" src="{{ photo.image.url }}"alt="Projects image">
+		{% endfor %}
+		</div>
+
+{% endblock %}

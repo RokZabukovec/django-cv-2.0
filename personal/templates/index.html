@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+    <section>
+    <div class="black-overlay"></div>
+        <div class="hero centered">
+            <div class="main-title flex">
+                <h1>Hi, my name is <span class="focus-color bold">Rok Zabukovec</span>.</h1>
+                <h3>Eager to become your new developer.</h3>
+            </div>
+	        <div class="scroll-info">
+		        <div class='icon-scroll'></div>
+	        </div>
+        </div>
+    </section>
+    {% include "navbar.html" %}
+    <section class="container-fluid feaured-projects light-bg p-10 full-screen flex flex-column flex-center">
+       <div class="container">
+            {% if featured is not None %}
+	       <h1 class="center-title bold big dark-blue mb-5">Featured projects.</h1>
+            <div class="card-group">
+            {% for project in featured %}
+                  <div class="card featured-card">
+                  {% if project.cover.url is not None %}
+                    <img src="{{ project.cover.url }}" class="card-img-top">
+                      {% else %}
+                      <h3>No picture</h3>
+                  {% endif %}
+                    <div class="card-body featured-card-body">
+                      <h5 class="card-title  bold dark-blue">{{ project.title }}</h5>
+                      <p class="focus-color bold">{{ project.tehnologies }}</p>
+                      <p class="dark-blue">{{ project.overview }}</p>
+                        <a href="/project/{{ project.id }}" class="readmore-btn underlined">Read more</a>
+                    </div>
+                  </div>
+            {% endfor %}
+            {% else %}
+                <h1 class="center-title bold big dark-blue mb-5">No featured projects.</h1>
+            {% endif %}
+	       </div>
+        </div>
+        <div class="btn-group">
+            <a class="btn focus-btn bold pill readmore-btn relative" href="/projects">All projects</a>
+            <a class="btn focus-btn bold pill readmore-btn relative" href="https://github.com/RokZabukovec">Github</a>
+        </div>
+    </section>
+        {% include "about.html" %}
+        {% include "footer.html" %}
+{% endblock %}

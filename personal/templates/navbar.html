@@ -1,0 +1,25 @@
+{% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark index-nav sticky-top">
+    <a class="navbar-brand" href="/">Rok Zabukovec</a>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav light-menu ml-auto">
+            <li class="nav-item active m-auto">
+                <a class="nav-link omeni" href="/">Home</a>
+            </li>
+            <li class="nav-item active m-auto">
+                <a class="nav-link projekti" href="/projects">Projects</a>
+            </li>
+	        <li class="nav-item active m-auto">
+                <a class="nav-link projekti" href="/projects">Github</a>
+            </li>
+	         <li class="nav-item m-auto active pill-sm">
+                <a class="nav-link projekti" href="/download">Download CV</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+{% endblock %}
